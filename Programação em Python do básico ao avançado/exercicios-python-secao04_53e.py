@@ -186,7 +186,7 @@ n = float(input("Digita quando vc tem em REAL e boa sorte: "))
 formula = n / 5.27
 print(f"Vc tem {n}R$ e em dolar vc tem {formula}$")
 Pular_Linha() 
-'''''''''''''''''''''''''''
+
 #31
 n = int(input("Digita 1 numero ai: "))
 print(f"Antecessor: {n-1}, Sucessor: {n+1}")
@@ -227,7 +227,7 @@ Pular_Linha()
 
 #37
 n = float(input("Valor do produto: "))
-print(f"Valor + desconto: {((n*12)/100) - n}")
+print(f"Valor + desconto: {n - ((n*12)/100)}")
 Pular_Linha()
 
 #38
@@ -236,4 +236,88 @@ print(f"Salario + aumennto: {((n*25)/100) + n}")
 Pular_Linha()
 
 #39
+print("Premio de 780K pa 3 pessoa")
+print(f"A 1° ficou com {(780*46/100)*1000 }")
+print(f"A 2° ficou com {(780*32/100)*1000 }")
+print(f"A 3° ficou com {(780*22/100)*1000 }")
+Pular_Linha()
 
+#40
+n = int(input("Quantos dias vc vai trampar?: "))
+formula = (30 - (30*8/100)) * n
+print(f"Vc vai trampar {n} dias e vai ganhar {formula}")
+Pular_Linha()
+'''''''''''''''''''''''''''''
+#41
+n = int(input("Quantas horas vc trampa por dia?: "))
+n1 = float(input("Quanto vc ganha por hora?: "))
+formula = ((30 * n) * n1)
+print(f"Vc vai ganhar no fim do mes {formula} + 10% vai ficar {formula + ((formula*10)/100)}")
+Pular_Linha()
+
+#42
+n = float(input("Qual seu salario?: "))
+formula = (n + (n*5)/100)
+print(f"Seu salario base + 5% é {formula} menos o imposto de renda fica {(formula - (formula*7)/100)}")
+Pular_Linha()
+
+#43
+n = float(input("Qual o preço total?: "))
+formula1 = n - (n*10/100)
+formula2 = n / 3
+formula3 = (n*5/100)
+formula4 = (formula2*5/100)
+print(f"Total: {formula1}")
+print(f"Parcela dividido por 3: {formula2}")
+print(f"Comissão do vendedor caso a venda seja a vista: {formula3}")
+print(f"Comissão do vendedor no caso de ser parcelado: {formula4}")
+Pular_Linha()
+
+#44
+hd = float(input("Qual altura do degrau?: "))
+h = float(input("Qual altura vc deseja alcançar?: "))
+formula = round(h/hd)
+print(f"Vc vai ter q subir {formula} degraus da escada")
+Pular_Linha()
+
+#45
+n = input("Escreve 1 letra ai: ").upper()
+print(f"Convertendo {n} pra {n.lower()}")
+Pular_Linha()
+
+#46
+n = input("Escreve 1 numero INTEIRO ai: ")
+#Transformo o número digitado em uma lista
+n = list(n)
+#Faço a orndenação inversa da lista, aqui eu já teria um resultado bem próximo
+n.reverse()
+print(n, type(n))
+#Converto a lista para uma string e depois para inteiro
+n = int("".join(n))
+print(n)
+Pular_Linha()
+
+#47
+n = input("Escreve 1 numero INTEIRO ai: ")
+n = list(n)
+print(n[0],"\n",n[1],"\n",n[2],"\n",n[3])
+Pular_Linha()
+
+#48
+#FAZER MAIS TARDE
+n = int(input("Digita 1 numero Inteiro ai gigante: "))
+#segundos=>minutos
+n1 = n/60
+#minutos=>horas
+n2 = n1/60
+#horas=>dias
+n3 = n2/24
+
+#49
+#FAZER MAIS TARDE
+
+#50
+n = int(input("Digita sua idade: "))
+n = 2022 - n
+print(f"Vc nasceu no ano de {n}")
+Pular_Linha()
