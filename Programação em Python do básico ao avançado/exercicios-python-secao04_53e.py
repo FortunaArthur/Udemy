@@ -1,7 +1,7 @@
 def Pular_Linha():
     pular_linha = "\n"*2
     print(pular_linha)
-'''''''''''''''''''''''
+
 #1
 n = int(input("numero inteiro: "))
 print(n, type(n))
@@ -58,7 +58,7 @@ Pular_Linha()
 n = float(input("Digita 1 velocidade ai: "))
 formula = n/3.6
 print(f"Era {n}KM/H e ficou {formula}M/S")
-Pular_linha()
+Pular_Linha()
 
 #11
 n = float(input("Digita 1 velocidade ai: "))
@@ -247,7 +247,7 @@ n = int(input("Quantos dias vc vai trampar?: "))
 formula = (30 - (30*8/100)) * n
 print(f"Vc vai trampar {n} dias e vai ganhar {formula}")
 Pular_Linha()
-'''''''''''''''''''''''''''''
+
 #41
 n = int(input("Quantas horas vc trampa por dia?: "))
 n1 = float(input("Quanto vc ganha por hora?: "))
@@ -304,20 +304,77 @@ print(n[0],"\n",n[1],"\n",n[2],"\n",n[3])
 Pular_Linha()
 
 #48
-#FAZER MAIS TARDE
-n = int(input("Digita 1 numero Inteiro ai gigante: "))
-#segundos=>minutos
-n1 = n/60
-#minutos=>horas
-n2 = n1/60
-#horas=>dias
-n3 = n2/24
+#Usei essa aula pra fazer esse daki
+# https://youtu.be/wy11FiG_U9E
+n = int(input("Digite segundos Inteiros ai: "))
+h = n / 3600
+m = (n % 3600) / 60
+s = (n % 3600) % 60
+
+print(f"{round(h)}H {round(m)}M {round(s)}S")
+Pular_Linha()
 
 #49
-#FAZER MAIS TARDE
+#Ja tava puto e me deu 1 preguiça da porra de fazer esse aki, ai peguei nesse site aki
+# https://brainly.com.br/tarefa/38885954
+print('Preencha os campos abaixo com o horário atual')
+
+h = int(input('Hora: '))
+
+m = int(input('Minuto: '))
+
+s = int(input('Segundo: '))
+
+d = int(input('\nDuração do evento (segundos): '))
+
+s_final = (s + d) % 60
+
+m_final = ( m + (s+d)//60 ) % 60
+
+h_final = ( h + ( m + (s+d)//60 )//60 ) % 24
+
+print(f'O fim do evento se dará às {h_final}h {m_final}min e {s_final} segundos')
+Pular_Linha()
 
 #50
 n = int(input("Digita sua idade: "))
 n = 2022 - n
 print(f"Vc nasceu no ano de {n}")
 Pular_Linha()
+
+#51
+#pitágoras
+x = float(input("X: "))
+y = float(input("Y: "))
+# z² = x² + y²
+z = (x*x) + (y*y)
+z = z**0.5
+print(f"Distancia é {z}")
+Pular_Linha()
+
+#52
+print("Premio de 870K pa 3 amigos")
+n1 = float(input("Quanto o 1° vai investir na loteria de 870K?:"))
+n2 = float(input("Quanto o 2° vai investir na loteria de 870K?:"))
+n3 = float(input("Quanto o 3° vai investir na loteria de 870K?:"))
+
+t = n1+n2+n3
+a1 = n1*100/t
+a2 = n2*100/t
+a3 = n3*100/t
+
+print(f"O 1° ficou com {(870*a1/100)*1000 }")
+print(f"O 2° ficou com {(870*a2/100)*1000 }")
+print(f"O 3° ficou com {(870*a3/100)*1000 }")
+Pular_Linha()
+
+#53
+c = float(input("Comprimento: "))
+l = float(input("Largura: "))
+p = float(input("Preço por metro de rede: "))
+
+formula = c*l
+formula = formula**2
+formula = formula*p
+
+print(f"Vai custar {formula} pra redear td terreno")
