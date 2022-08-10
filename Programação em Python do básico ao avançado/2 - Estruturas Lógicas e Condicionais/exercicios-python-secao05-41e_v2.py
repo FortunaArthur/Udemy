@@ -144,6 +144,7 @@ else:
 
 #12
 #http://www.w3big.com/pt/python/func-number-log.html
+from ast import Not
 import math
 from re import A
 n = int(input("Numero:  "))
@@ -290,3 +291,67 @@ elif (a==b) or (a==c) or (b==c):
 #Triângulo Escaleno: três lados diferentes;
 else:
     print('Escaleno')
+
+#21
+n1 = float(input("Digite 1 numero: "))
+n2 = float(input("Digite outro numero: "))
+
+print("MENU" + "\n" 
+"1 : Somar" + "\n"
+"2 : Subtrair Maior pelo Menor" + "\n"
+"3 : Produto entre os 2 (Multiplicação)" + "\n"
+"4 : Divisão entre os 2 (Não pode ser numero 0)" + "\n")
+
+escolha = int(input("Qual opção vc escolhe: "))
+
+if escolha == 1:
+    print(f"{n1} + {n2} = {n1+n2}")
+    
+elif escolha == 2:
+   if n1 > n2:
+    print(f"{n1} - {n2} = {n1-n2}")
+   else:
+    print(f"{n2} - {n1} = {n2-n1}")
+
+elif escolha == 3:
+    print(f"{n1} * {n2} = {n1*n2}")
+    
+elif escolha == 4:
+    if n1 and n2 > 0:
+        print(f"{n1} / {n2} = {n1/n2}")
+        print(f"{n2} / {n1} = {n2/n1}")
+    else:
+        print("Valor 0 não divide")
+
+else:
+    print("Valor errado")
+
+#22
+n1 = int(input("Qual sua idede: "))
+n2 = int(input("Quantos anos vc prestou serviço: "))
+
+if n1 >= 65:
+    print("Pode Aposentar")
+
+elif n2 >= 30:
+    print("Pode Aposentar")
+
+elif (n1 >= 65) and (n2 >= 30):
+    print("Pode Aposentar")
+
+else:
+    print("Não pode Aposentar")
+
+#23
+n = int(input("Qual o ano: "))
+
+if n % 400 == 0:
+    print("Ano Bissexto")
+
+elif (n % 4 == 0) and not (n % 100 == 0):
+    print("Ano Bissexto")
+
+else:
+    print("Ano Não Bissexto")
+
+#24
