@@ -146,7 +146,7 @@ else:
 #http://www.w3big.com/pt/python/func-number-log.html
 from ast import Not
 import math
-from re import A
+from re import A, X
 n = int(input("Numero:  "))
 
 if n > 0:
@@ -355,3 +355,114 @@ else:
     print("Ano Não Bissexto")
 
 #24
+n = float(input("Qul o valor do produto: "))
+print("Imposto sobre o produto por estado" + "\n"
+"MG : 07%" + "\n"
+"SP : 12%" + "\n"
+"RJ : 15%" + "\n"
+"MS : 08%" + "\n")
+i = input("Pra qual estado o produto será enviado: ").upper()
+
+if i == "MG":
+    print(f"Preço do produto: {n}, preço + imposto do estado { n + ((n * 7) / 100)}")
+
+elif i == "SP":
+    print(f"Preço do produto: {n}, preço + imposto do estado { n + ((n * 12) / 100)}")
+
+elif i == "RJ":
+    print(f"Preço do produto: {n}, preço + imposto do estado { n + ((n * 15) / 100)}")
+
+elif i == "MS":
+    print(f"Preço do produto: {n}, preço + imposto do estado { n + ((n * 8) / 100)}")
+
+else:
+    print("Erro de estado")
+
+#25
+D = (b**2) - (4 * (a * c))
+
+a = float(input("Valor de A: "))
+b = float(input("Valor de B: "))
+c = float(input("Valor de C: "))
+
+if a != 0:
+    print("Não é equação de 2° grau")
+
+else:
+    if D < 0:
+        print("Não existe raiz")
+    
+    elif D == 0:
+        print(f"{(-b + (D ** 0.5)) / (2 * a)}")
+        print("Raiz Unica")
+    
+    elif D >= 0:
+        print(f"1° raiz : {(-b + (D ** 0.5)) / (2 * a)}")
+        print(f"2° raiz : {(-b - (D ** 0.5)) / (2 * a)}")
+
+#26
+n = float(input("Km: "))
+l = float(input("Litros: "))
+
+f = n / l
+
+if f < 8:
+    print("Vende esse carro")
+
+elif f >= 8 and f <=14:
+    print("Economico")
+
+elif f > 14:
+    print("Economico pra krl")
+
+#27
+n = int(input("Qual tua idade: "))
+
+if n >= 5 and n <= 7:
+    print("Infantil A")
+
+elif n >= 8 and n <= 10:
+    print("Infantil B")
+
+elif n >= 11 and n <= 13:
+    print("Juvenil A")
+
+elif n >= 14 and n <= 17:
+    print("Juvenil B")
+
+else:
+    print("Sênior")
+
+#28
+x = int(input("1° Valor: "))
+y = int(input("2° Valor: "))
+z = int(input("3° Valor: "))
+
+print("Qual a metrica que vc quer aplicar a estes valores?" + "\n"
+"1 : Geométrica" + "\n"
+"2 : Ponderada" + "\n"
+"3 : Harmônica" +  "\n"
+"4 : Aritimética" + "\n")
+
+e = int(input("Qual vc vai escolher: "))
+
+if e == 1:
+    f = ((x * y * z) ** 0.5) ** 3
+    print(f"Valor: {f}")
+
+elif e == 2:
+    f = ((x + 2) * (y + (3 * z))) / 6
+    print(f"Valor: {f}")
+
+elif e == 3:
+    f = 1 / ((1 / x) + (1 / y) + (1 / z))
+    print(f"Valor: {f}")
+
+elif e == 4:
+    f = (x + y + z) / 3
+    print(f"Valor: {f}")
+
+else:
+    print("Opção invalida")
+
+#29
