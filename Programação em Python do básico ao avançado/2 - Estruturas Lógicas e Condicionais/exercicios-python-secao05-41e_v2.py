@@ -147,6 +147,7 @@ else:
 from ast import Not
 import math
 from re import A, X
+from tkinter.tix import InputOnly
 n = int(input("Numero:  "))
 
 if n > 0:
@@ -466,3 +467,214 @@ else:
     print("Opção invalida")
 
 #29
+print("Prova de Matematica" + "\n"
+"Quanto é" + "\n"
+"1 : 50 + 49" + "\n"
+"2 : 10 + 39" + "\n"
+"3 : 27 + 9" + "\n"
+"4 : 31 + 49" + "\n"
+"5 : 22 + 18" + "\n")
+
+n1 = int(input("Questão 1: "))
+n2 = int(input("Questão 2: "))
+n3 = int(input("Questão 3: "))
+n4 = int(input("Questão 4: "))
+n5 = int(input("Questão 5: "))
+
+acertos = 0
+
+if n1 == (50 + 49):
+    print(f"Acertou, a resposta é {50 + 49}")
+    acertos = acertos + 1
+else:
+    print(f"Errou, a resposta é {50 + 49}")
+
+if n2 == (10 + 39):
+    print(f"Acertou, a resposta é {10 + 39}")
+    acertos = acertos + 1
+else:
+    print(f"Errou, a resposta é {10 + 39}")
+
+if n3 == (27 + 9):
+    print(f"Acertou, a resposta é {27 + 9}")
+    acertos = acertos + 1
+else:
+    print(f"Errou, a resposta é {27 + 9}")
+
+if n4 == (31 + 49):
+    print(f"Acertou, a resposta é {31 + 49}")
+    acertos = acertos + 1
+else:
+    print(f"Errou, a resposta é {31 + 49}")
+
+if n4 == (22 + 18):
+    print(f"Acertou, a resposta é {22 + 18}")
+    acertos = acertos + 1
+else:
+    print(f"Errou, a resposta é {22 + 18}")
+
+print(f"Vc acertou {acertos} questões")
+
+#30
+n1 = int(input("N1: "))
+n2 = int(input("N2: "))
+n3 = int(input("N3: "))
+
+l = [n1,n2,n3]
+
+print(f"Ordem crescente: {sorted(l)}")
+
+#31
+n1 = float(input("Sua altura: "))
+n2 = float(input("Qual seu peso: "))
+
+if (n1 < 1.20) and (n2 <= 60):
+    print("Classificação A")
+
+elif (n1 < 1.20) and (n2 >= 60 and n2 <= 90):
+    print("Classificação D")
+
+elif (n1 < 1.20) and (n2 > 90):
+    print("Classificação G")
+
+if (n1 >= 1.20 and n1 <= 1.70) and (n2 <= 60):
+    print("Classificação B")
+
+elif (n1 >= 1.20 and n1 <= 1.70) and (n2 >= 60 and n2 <= 90):
+    print("Classificação E")
+
+elif (n1 >= 1.20 and n1 <= 1.70) and (n2 > 90):
+    print("Classificação H")
+
+if (n1 > 1.70) and (n2 <= 60):
+    print("Classificação C")
+
+elif (n1 > 1.70) and (n2 >= 60 and n2 <= 90):
+    print("Classificação F")
+
+elif (n1 > 1.70) and (n2 > 90):
+    print("Classificação I")
+
+#32
+print("Cardapio | Codigo | Preço" + "\n"
+"Dogão | 100 | 1.20"  + "\n"
+"Bauru simples | 101 | 1.30"  + "\n"
+"Bauru com ovo | 102 | 1.50"  + "\n"
+"Hamburgão | 103 | 1.20"  + "\n"
+"Hamburgão com queijo | 104 | 1.70"  + "\n"
+"Sukinho | 105 | 2.20"  + "\n"
+"Refri | 106 | 1.00"  + "\n")
+
+cod = int(input("Qual o codigo: "))
+
+if cod == 100:
+    print("Vc vai pagar 1.20 pelo hotdog")
+else:
+    if cod == 101:
+        print("Vc vai pagar 1.30 pelo Bauru simples")
+    else:
+        if cod == 102:
+            print("Vc vai pagar 1.50 pelo Bauru com ovo")
+        else:
+            if cod == 103:
+                print("Vc vai pagar 1.20 pelo Hamburgão")
+            else:
+                if cod == 104:
+                    print("Vc vai pagar 1.70 pelo Hamburgão com queijo")
+                else:
+                    if cod == 105:
+                        print("Vc vai pagar 2.20 pelo Sukinho")
+                    else:
+                        if cod == 106:
+                            print("Vc vai pagar 1.00 pelo Refri")
+
+#33
+n = float(input("Preço do produto: "))
+
+if n <= 50:
+    f = n + ((n * 5) / 100)
+    if f <= 80:
+        print("Barato")
+
+if n > 50 and n1 <= 100:
+    f = n + ((n * 10) / 100)
+    if f > 80 and f <= 120:
+        print("Normal")
+
+if n > 100:
+    f = n + ((n * 15) / 100)
+    if f > 120 and f <= 200:
+        print("Caro")
+    elif n > 200:
+        print("Caro p krl")
+
+else:
+    print("Erro")
+
+#34
+n = float(input("Qual sua nota: "))
+f = int(input("Quantas faltas vc tem: "))
+
+if (n >= 9) and (n <= 10):
+    if f <= 20:
+        print("Conceito: A")
+    else:
+        print("Conceito: B")
+
+if (n >= 7.5) and (n <= 8.9):
+    if f <= 20:
+        print("Conceito: B")
+    else:
+        print("Conceito: C")
+
+if (n >= 5) and (n <= 7.4):
+    if f <= 20:
+        print("Conceito: C")
+    else:
+        print("Conceito: D")
+
+if (n >= 4) and (n <= 4.9):
+    if f <= 20:
+        print("Conceito: D")
+    else:
+        print("Conceito: E")
+
+if (n >= 0) and (n <= 3.9):
+    if f <= 20:
+        print("Conceito: E")
+    else:
+        print("Conceito: E")
+
+#35
+#Fikei sem saco pra essa e peguei aki
+#https://www.pythonprogressivo.net/2018/02/Determinar-Data-Valida-Invalida.html
+
+dia = int( input('Dia: ') )
+mes = int( input('Mês: ') )
+ano = int( input('Ano: ') )
+
+valida = False
+
+# Meses com 31 dias
+if( mes==1 or mes==3 or mes==5 or mes==7 or \
+    mes==8 or mes==10 or mes==12):
+    if(dia<=31):
+        valida = True
+# Meses com 30 dias
+elif( mes==4 or mes==6 or mes==9 or mes==11):
+    if(dia<=30):
+        valida = True
+elif mes==2:
+    # Testa se é bissexto
+    if (ano%4==0 and ano%100!=0) or (ano%400==0):
+        if(dia<=29):
+            valida = True
+    elif(dia<=28):
+            valida = True
+
+if(valida):
+    print('Data válida')
+else:
+    print('Inválida')
+
+#36
