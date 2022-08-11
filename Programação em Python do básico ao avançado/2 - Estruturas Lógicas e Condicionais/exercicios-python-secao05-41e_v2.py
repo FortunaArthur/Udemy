@@ -678,3 +678,274 @@ else:
     print('Inválida')
 
 #36
+n = float(input("Qual o valor da venda mensal: "))
+
+f = round((( n * 14) / 100))
+
+if n < 20000 :
+    print(f"Comissão: {400 + f}")
+else:
+    if n >= 20000 and n < 40000:
+        print(f"Comissão: {500 + f}")
+    else:
+        if n >= 40000 and n < 60000:
+            print(f"Comissão: {550 + f}")
+        else:
+                if n >= 60000 and n < 80000:
+                    print(f"Comissão: {600 + f}")
+                else:
+                    if n >= 80000 and n < 100000:
+                        print(f"Comissão: {650 + f}")
+                    else:
+                        if n > 100000:
+                            print(f"Comissão: {600 + round((( n * 16) / 100))}")
+
+#37
+#Sem saco pra fazer essa tb, vsf grande da porra
+#https://gist.github.com/AlyoshaS/93d231d3e54c2af1d4c10f351b1a2cd2
+#1° Versão
+hora_chegada, min_chegada = [int(x) for x in input("Digite a hora e minuto de chegada (** **  e ** **): ").split()]
+hora_partida, min_partida = [int(x) for x in input("Digite a hora e minuto de saída (** **  e ** **): ").split()]
+
+# Define horario:
+if hora_chegada > hora_partida:
+    hora_partida = hora_partida + 24
+if min_chegada > min_partida:
+    min_partida = min_partida + 60
+    hora_partida = hora_partida - 1
+
+min_final = min_partida - min_chegada     
+hora_final = hora_partida - hora_chegada
+
+if hora_final >= 1:
+    if min_final > 1:
+        print("O carro ficou estacionado durante %d horas e %d minutos." % (hora_final, min_final))
+    else:
+        print("O carro ficou estacionado durante %d horas." % (hora_final))
+else:
+    print("O carro ficou estacionado durante %d minutos." % (min_final))
+
+# Define valores:
+min_total = int((hora_final * 60) + min_final)
+
+if min_total <= 120:
+    if min_total <= 60:
+        preco = 1.00
+        print("Preço total: R$%.2f." % (preco))
+    else:
+        preco = 2
+        print("Preço total: R$%.2f." % (preco))
+elif min_total <= 240:
+    if min_total <= 180:
+        preco = 2 + 1.40
+        print("Preço total: R$%.2f." % (preco))
+    else:
+        preco = 2 + (1.40 * 2)
+        print("Preço total: R$%.2f." % (preco))
+else:
+    hora_total = int(min_total // 60)
+    preco = 4.40 + ((hora_total - 4) * 2)
+    print("Preço total: R$%.2f." % (preco))
+
+#2° Versão
+h_entrada = int(input("Digite a hora de entrada \n"))
+m_entrada = int(input("Digite os minutos de entrada \n"))
+h_saida = int(input("Digite a hora de saída \n"))
+m_saida = int(input("Digite os minutos de saída \n"))
+
+# cálculo da permanência
+
+if h_entrada > h_saida:
+    hora_final = (h_saida + 24) - h_entrada
+else:
+    hora_final = h_saida - h_entrada
+
+if m_entrada > m_saida:
+    minuto_final = (m_saida + 60) - m_entrada
+else:
+    minuto_final = m_saida - m_entrada
+
+print(f"A permanência foi de: {hora_final} horas e {minuto_final} minutos \n")
+
+# cálculo do valor
+
+tempo_minutos = hora_final * 60 + minuto_final
+
+if 1 <= tempo_minutos <= 60:
+    preco = 1
+    print(f"O valor a ser pago será de R$ {float(preco)}")
+elif 60 < tempo_minutos <= 120:
+    preco = 2
+    print(f"O valor a ser pago será de R$ {float(preco)}")
+elif 120 < tempo_minutos <= 180:
+    preco = 4.2
+    print(f"O valor a ser pago será de R$ {float(preco)}")
+elif 180 < tempo_minutos <= 240:
+    preco = 5.6
+    print(f"O valor a ser pago será de R$ {float(preco)}")
+elif tempo_minutos > 240:
+    preco = hora_final * 2
+    print(f"O valor a ser pago será de R$ {float(preco)}")
+else:
+    print(f"Tempo de permanência mínimo, não será necessário pagar!")
+
+#38
+dia = int( input('Dia: ') )
+mes = int( input('Mês: ') )
+ano = int( input('Ano: ') )
+
+valida = False
+
+# Meses com 31 dias
+if( mes==1 or mes==3 or mes==5 or mes==7 or \
+    mes==8 or mes==10 or mes==12):
+    if(dia<=31):
+        valida = True
+# Meses com 30 dias
+elif( mes==4 or mes==6 or mes==9 or mes==11):
+    if(dia<=30):
+        valida = True
+elif mes==2:
+    # Testa se é bissexto
+    if (ano%4==0 and ano%100!=0) or (ano%400==0):
+        if(dia<=29):
+            valida = True
+    elif(dia<=28):
+            valida = True
+
+if(valida):
+    print('Data válida')
+else:
+    print('Inválida')
+
+#39
+n = float(input("Qual teu salario: "))
+a = float(input("Quantos anos vc trampou: "))
+
+if n <= 500:
+    f = round((( n * 25) / 100))
+    if n < 1:
+        print(f"Seu salario é: {f + n}")
+
+    if a >= 1 and a <= 3:
+        print(f"Seu salario é: {(f + n) + 100}")
+
+    if a >= 4 and a <= 6:
+        print(f"Seu salario é: {(f + n) + 200}")
+
+    if a >= 7 and a <= 10:
+        print(f"Seu salario é: {(f + n) + 300}")
+    
+    if a > 10:
+        print(f"Seu salario é: {(f + n) + 500}")
+
+elif n <= 1000:
+    f = round((( n * 20) / 100))
+    if n < 1:
+        print(f"Seu salario é: {f + n}")
+
+    if a >= 1 and a <= 3:
+        print(f"Seu salario é: {(f + n) + 100}")
+
+    if a >= 4 and a <= 6:
+        print(f"Seu salario é: {(f + n) + 200}")
+
+    if a >= 7 and a <= 10:
+        print(f"Seu salario é: {(f + n) + 300}")
+    
+    if a > 10:
+        print(f"Seu salario é: {(f + n) + 500}")
+
+elif n <= 1500:
+    f = round((( n * 15) / 100))
+    if n < 1:
+        print(f"Seu salario é: {f + n}")
+
+    if a >= 1 and a <= 3:
+        print(f"Seu salario é: {(f + n) + 100}")
+
+    if a >= 4 and a <= 6:
+        print(f"Seu salario é: {(f + n) + 200}")
+
+    if a >= 7 and a <= 10:
+        print(f"Seu salario é: {(f + n) + 300}")
+    
+    if a > 10:
+        print(f"Seu salario é: {(f + n) + 500}")
+
+elif n <= 2000:
+    f = round((( n * 10) / 100))
+    if n < 1:
+        print(f"Seu salario é: {f + n}")
+
+    if a >= 1 and a <= 3:
+        print(f"Seu salario é: {(f + n) + 100}")
+
+    if a >= 4 and a <= 6:
+        print(f"Seu salario é: {(f + n) + 200}")
+
+    if a >= 7 and a <= 10:
+        print(f"Seu salario é: {(f + n) + 300}")
+    
+    if a > 10:
+        print(f"Seu salario é: {(f + n) + 500}")
+
+elif n > 2000 :
+    if n < 1:
+        print(f"Seu salario é: {n}")
+
+    if a >= 1 and a <= 3:
+        print(f"Seu salario é: {(n) + 100}")
+
+    if a >= 4 and a <= 6:
+        print(f"Seu salario é: {(n) + 200}")
+
+    if a >= 7 and a <= 10:
+        print(f"Seu salario é: {(n) + 300}")
+    
+    if a > 10:
+        print(f"Seu salario é: {(n) + 500}")
+        
+else:
+    print("Valores errados")
+
+#40
+#Só falatav esse e fikei sem saco pra escerver
+#peguei daki
+#https://gist.github.com/AlyoshaS/0126ca3dd672c2d5fb04fac0261dd600
+
+custo_fabrica = float(input("Digite o custo de fábrica: "))
+
+if custo_fabrica <= 12000:
+	print("O valor do carro é R$%.2f." % (custo_fabrica + (custo_fabrica * 0.05)))
+elif custo_fabrica <= 25000:
+	print("O valor do carro é R$%.2f." % (custo_fabrica + (custo_fabrica * 0.10) + (custo_fabrica * 0.15)))
+else:
+	print("O valor do carro é R$%.2f." % (custo_fabrica + (custo_fabrica * 0.15) + (custo_fabrica * 0.20)))
+
+#41
+a = float(input("Qual sua altura: "))
+p = float(input("Qual seu peso: "))
+
+f = p / (a*a)
+
+if f < 18.5:
+    print("Abaixo do peso")
+
+elif f >= 18.6 and f <= 24.9:
+    print("Saudével")
+
+elif f >= 25 and f <= 29.9:
+    print("Tá gordo")
+
+elif f >= 30 and f <= 34.9:
+    print("Gordo p krl")
+
+elif f >= 35 and f <= 39.9:
+    print("Gordo extratosferico")
+
+elif f >= 40:
+    print("Eu conheço 20 gordos e vc é 19 deles")
+
+else:
+    print("Numero invalido")
