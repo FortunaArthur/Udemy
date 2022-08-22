@@ -1,8 +1,5 @@
 #1
 # for i in rane (inicio, fim, incremento(Que vai  pulando))
-from tokenize import Ignore
-
-
 for i in range(3, 16, 3):
 # Ele vai inicializar com 3 e vai terminar com 16 e vai fazer o incremento de 3 em 3 (soma de 3 em 3)
     print(i)
@@ -169,3 +166,157 @@ for i in range(1, n+1):
 print(f"SOMA: {N}")
 
 #18
+v = int(input("Vezes: "))
+l = []
+
+for i in range(0, v):
+  n = int(input("Numeros: "))
+  l.append(n)
+  m = max(l)
+  c = l.count(m)
+  
+print(f"O numero max foi {m} e ele se repetiu {c} vezes")
+
+#19
+while True:
+    a = (int(input('insira um numero entre 100 e 999: ')))
+    
+    if a > 100 and a < 999:
+       break
+   
+    else:
+        a
+# http://devfuria.com.br/python/built-in-enumerate/
+#Tem q transformar pra string pra o enumerate percorrer
+b = str(a)
+for i, v in enumerate(b):
+    # o V é os valores e o I éa  posição
+   print(v)
+  
+#20
+c1 = 0
+l1 = []
+c2 = 0
+l2 = []
+while True:
+  n = (int(input('Numeros: ')))
+
+  if n == 1000:
+    break
+
+  elif n % 2 == 0:
+    l1.append(n)
+    c1 += 1
+
+  elif n % 2 != 0:
+    l2.append(n)
+    c2 += 1
+
+print(f"Lista de numeros pares {l1} Quantos numeroes pares tem no total {c1}")
+print(f"Lista de numeros impares {l2} Quantos numeroes impares tem no total {c2}")
+
+#21
+c1 = 0
+l1 = []
+c2 = 0
+l2 = []
+count = 0
+mult =  1
+while True:
+    n = (int(input('Numeros: ')))
+    if n == 1000:
+        break
+    if n % 2 == 0:
+        l1.append(n)
+        c1 +=1
+        count += n
+    else:
+        l2.append(n)
+        c2 += 1
+        mult *= n
+
+print(f"Lista de numeros pares {l1}\nQuantos numeroes pares tem no total {c1}\nQual a soma dos numeros pares {count}")
+print(f"Lista de numeros impares {l2}\nQuantos numeroes impares tem no total {c2}\nQual a multiplicacao dos numeros impares {mult}")
+
+#22
+c = 0
+s = 0
+while True:
+    n = (int(input('Numeros: ')))
+    if (n >= 10 and n <= 20):
+        c += 1
+        s += n 
+    else:
+        print(f"Média: {s/c}")
+        break
+  
+#23
+n = (int(input('Numeros: ')))
+
+for i in range (1, n):
+    if n % i == 0:
+        print(i)
+
+#24
+n = (int(input('Numeros: ')))
+l = []
+for i in range (1, n):
+    if n % i == 0:
+        l.append(i)
+print(sum(l))
+
+#25
+soma3 = 0
+soma5 = 0
+for i in range (1000):
+   if i % 3 == 0:
+       soma3 += i
+
+   elif i % 5 == 0:
+       soma5 += i
+
+print(f"soma dos multiplos de 3: {soma3}")
+print(f"soma dos multiplos de 5: {soma5}")
+print(f"soma total: {soma3 + soma5}")
+
+#26
+l1 = []
+#n = (int(input('Numeros: ')))
+#OU
+#n = 0
+while True:
+  n += 1
+  if (n % 11 == 0) or (n % 13 == 0) or (n % 17 == 0):
+    l1.append(n)
+    break
+
+print(l1)
+
+#27
+n = (int(input('Numeros: ')))
+l = []
+for i in range(1, n+1):
+    b = 1/i
+    l.append(b)
+
+h = 1 + sum(l)
+print(f"H(n) = {h}")
+
+#28
+import math
+n = (int(input('Numeros: ')))
+l = []
+l2 = []
+for i in range(1, n+1):
+  
+    l.append(i)
+    #Tem que importar a porra do MATCH se n se n multiplica os valores da lista
+    N = math.prod(l[::-1])
+  
+    s = 1/N
+    l2.append(s)
+    
+E = 1 + sum(l2)
+print(f"E = {E}")
+
+#29
