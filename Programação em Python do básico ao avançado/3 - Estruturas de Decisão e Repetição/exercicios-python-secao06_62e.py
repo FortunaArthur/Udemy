@@ -445,6 +445,12 @@ print(f"{sum(l2)**2} - {sum(l1)} = {(sum(l2)**2) - (sum(l1))} ")
 #37
 #PQP O DEVR DE CORNO MANSO DO KRL
 # NUM TENHO 1 PUTO DE IDEIA DE COMO FAZ ESSE DAKI
+#Peguei do gabarito da turma la
+for i in range(1000, 10000):
+    n1 = int(i.__str__()[0:2])
+    n2 = int(i.__str__()[2:4])
+    if (n1 + n2)**2 == i:
+        print(i)
 
 #38
 #Peguei desse site aki
@@ -946,3 +952,16 @@ print(pol)
 
 #62
 #VAI SE FUDE ESSA QUESTÃO AKI
+#ESSA PORRA FOI REMOVIDA DO GABARITO DO CARA LA
+"""
+pip install num2words
+from num2words import num2words
+ 
+total = ""
+ 
+for n in range(1, 1001):
+    num = num2words(n, lang='pt-BR')
+    total += num.replace(' ', '')
+ 
+print(f'Entre 1 e 1000 temos {len(total)} letras.')
+"""
