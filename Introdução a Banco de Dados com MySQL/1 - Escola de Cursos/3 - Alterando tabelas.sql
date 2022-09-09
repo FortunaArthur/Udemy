@@ -18,7 +18,6 @@ Identificador de Cursos (Chave Primária - Tipo Número)
 ALTER TABLE cursos
 ADD COLUMN `nome` VARCHAR(100) NOT NULL AFTER `id_curso`;
 
-
 /*Tabela Notas
 Identificador de Notas (Chave Primária - Tipo Número)
 -------> Descrição de Atividade (tipo texto)
