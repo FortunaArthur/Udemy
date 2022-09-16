@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulários</title>
+    </head>
+
+    <body>
+        <form action="Processa.php" methood="post">
+
+            <label>Texto</label> <!--Isso aki é o titulo que aparece do lado da caixa-->
+            <input type="text" name="Texto 1" placeholder="Texto">
+        
+            <br> <!--Pula Linha-->
+
+            <label>Senha</label>
+            <input type="password" name="Senha" placeholder="Senha">
+
+            <br>
+            
+            <labe>Oculto</labe>
+            <input type="hidden" name="Imformacao_Oculta" value="Mensagem Oculta">
+
+            <br>
+
+            <label>Select</label>
+            <select name="Selecao">
+                <option value="1">Opção 1</option>
+                <option value="2">Opção 2</option>
+                <option value="3">Opção 3</option>
+            </select>
+
+            <br>
+
+            <label>Radio</label>
+            <!--Não mudar o name para ele entender que são opções do msm radio-->
+            <input type="radio" name="radio 1" value="1">Valor 1
+            <input type="radio" name="radio 1" value="2">Valor 2
+
+            <br>
+
+            <label>CheckBox</label>
+            <input type="checkbox" name="ck1" value="1" checked>Valor 1 <!--checked vai fazer a pagina abrir com o valor ja marcado-->
+            <input type="checkbox" name="ck1" value="2" >Valor 2
+            <input type="checkbox" name="ck1" value="3" >Valor 3
+
+            <br>
+
+            <input type="submit" value="Enviar" name="Enviar">
+
+    </body>
+</html>
