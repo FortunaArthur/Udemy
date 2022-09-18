@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Aula 1*/
 p {
     color: #FF7F50;
@@ -26,4 +27,34 @@ header {
 
 #div_direita {
     background-color: yellow;
+=======
+/*Aula 1*/
+p {
+    color: #FF7F50;
+    font-size: 60px;
+    font-family: 'Impact', Times, Arial;
+}
+
+body {
+    background-color: #000;
+}
+
+/*Aula 2*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: green;
+    height: 100px;
+}
+
+#div_esquerda {
+    background-color: red;
+}
+
+#div_direita {
+    background-color: yellow;
+>>>>>>> f0d1db1a6371777ea2198dbb4a3b2831808fc0b9
 }
