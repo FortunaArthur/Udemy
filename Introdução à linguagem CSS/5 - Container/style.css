@@ -1,0 +1,47 @@
+/* TAGS */
+p {
+    color: #FF7F50;
+    font-size: 60px;
+    font-family: 'Impact', Times, Arial;
+}
+
+body {
+    background-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: green;
+    height: 100px;
+}
+
+footer {
+    clear: both;
+    background-color: blue;
+    height: 50px;
+}
+
+/* IDS */
+#div_esquerda {
+    background-color: red;
+    min-height: 200px ;
+    width: 60%;
+    float: left;
+}
+
+#div_direita {
+    background-color: yellow;
+    min-height: 200px;
+    width: 40%;
+    float: right;
+}
+
+/* CLASS */
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
