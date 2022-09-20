@@ -1,0 +1,50 @@
+/* TAGS */
+p {
+    color: #FF7F50;
+    font-size: 60px;
+}
+
+body {
+    background-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Arial;
+}
+
+header {
+    background-color: rgb(20, 124, 128);
+    height: 60px;
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+    background-color: rgb(20, 124, 128);
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Impact',
+}
+
+h1 {
+    color: aliceblue;
+    font-family: Times, Arial;
+}
+
+/* IDS */
+#div_principal {
+    background-color: red;
+    min-height: 200px;
+    width: 60%;
+    float: left;
+}
+
+/* CLASS */
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #FF7F50;
+}

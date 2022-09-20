@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*Aula 1*/
 p {
     color: #FF7F50;
@@ -8,15 +7,4 @@ p {
 
 body {
     background-color: #000;
-=======
-/*Aula 1*/
-p {
-    color: #FF7F50;
-    font-size: 60px;
-    font-family: 'Impact', Times, Arial;
-}
-
-body {
-    background-color: #000;
->>>>>>> f0d1db1a6371777ea2198dbb4a3b2831808fc0b9
 }
