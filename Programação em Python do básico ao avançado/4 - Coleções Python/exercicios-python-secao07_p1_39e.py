@@ -423,3 +423,274 @@ print("List : " + str(list))
 st_dev = np.std(list)
 
 print("Standard deviation of the given list: " + str(st_dev))
+
+#27
+# https://acervolima.com/programa-python-para-verificar-se-um-numero-e-primo-ou-nao/
+l = []
+
+for i in range(1,11):
+    a = int(input("Valor: "))
+    l.append(a)
+
+primos = []
+N_primos = []
+
+for num in l:
+    if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                #print(num, "is not a prime number")
+                N_primos.append(num)
+                break
+        else:
+            #print(num, "is a prime number")
+            primos.append(num)
+    
+    else:
+        #print(num, "is not a prime number")
+        N_primos.append(num)
+
+inds = []
+for i in primos:
+    inds.append(l.index(i))
+
+print("Numeros primos:", primos)
+print("Posição dos numeros primos na lista", inds)
+
+#28
+l = []
+
+for i in range(1,11):
+    a = int(input("Valor: "))
+    l.append(a)
+
+v1 = []
+v2 = []
+
+for x in l:
+    if x % 2 == 0:
+        v2.append(x)
+
+    elif x % 2 != 0:
+        v1.append(x)
+    
+print("Lista de Pares", v2)
+print("Lista de Impares", v1)
+
+#29
+l = []
+
+for i in range(1,11):
+    a = int(input("Valor: "))
+    l.append(a)
+
+v1 = []
+v2 = []
+
+for x in l:
+    if x % 2 == 0:
+        v2.append(x)
+
+    elif x % 2 != 0:
+        v1.append(x)
+
+print("Lista de Pares", v2)
+print("soma dos pares", sum(v2))
+print("Lista de Impares", v1)
+print("Quantidade de impares", len(v1))
+
+#30
+l1 = []
+l2 = []
+l3 = []
+
+c1 = 0
+c2 = 0
+
+print("1° Lista \n")
+while True:
+    a = int(input("Valor da 1° lista: "))
+    if a not in l1:
+        l1.append(a)
+        c1 +=1
+    else:
+        print("Não pode Valor repetido")
+
+    if c1 == 10:
+        False
+        break
+
+print("\n2° Lista")
+while True:
+    b = int(input("Valor da 2° lista: "))
+    if b not in l2:
+        l2.append(b)
+        c2 +=1
+    else:
+        print("Não pode Valor repetido")
+
+    if c2 == 10:
+        False
+        break
+    
+for x in l1: 
+    for y in l2:
+        if x == y:
+            l3.append(x)
+
+print("1° Lista:", l1)
+print("2° Lista:", l2)
+print("Valores em comum",l3)
+
+#31
+l1 = []
+l2 = []
+
+c1 = 0
+c2 = 0
+
+print("1° Lista \n")
+while True:
+    a = int(input("Valor da 1° lista: "))
+    if a not in l1:
+        l1.append(a)
+        c1 +=1
+    else:
+        print("Não pode Valor repetido")
+
+    if c1 == 10:
+        False
+        break
+
+print("\n2° Lista")
+while True:
+    b = int(input("Valor da 2° lista: "))
+    if b not in l2:
+        l2.append(b)
+        c2 +=1
+    else:
+        print("Não pode Valor repetido")
+
+    if c2 == 10:
+        False
+        break
+    
+l3 = set(l1 + l2)
+
+print("1° Lista:", l1)
+print("2° Lista:", l2)
+print("Valores unidos", l3)
+
+#32
+l1 = []
+l2 = []
+
+c1 = 0
+c2 = 0
+
+print("1° Lista \n")
+while True:
+    a = int(input("Valor da 1° lista: "))
+    if a not in l1:
+        l1.append(a)
+        c1 +=1
+        
+    else:
+        print("Não pode Valor repetido")
+
+    if c1 == 5:
+        False
+        break
+
+
+print("\n2° Lista")
+while True:
+    b = int(input("Valor da 2° lista: "))
+    if b not in l2 and b not in l1:
+        l2.append(b)
+        c2 +=1
+    else:
+        print("Não pode Valor repetido e nem valor da 1° lista")
+
+    if c2 == 5:
+        False
+        break
+
+print("1° Lista:", l1)
+print("2° Lista:", l2)
+#A
+# https://pt.stackoverflow.com/questions/309189/soma-de-cada-elemento-de-duas-listas
+soma = [ (a + b) for a, b in zip(l1, l2) ]
+print("Soma", soma)
+#B
+# https://www.delftstack.com/pt/howto/python/multiply-two-lists-python/
+multi = [ (a * b) for a, b in zip(l1, l2) ]
+print("Multiplicação", multi)
+#C
+difenc = [ (a - b) for a, b in zip(l1, l2) ]
+print("Diferença", difenc)
+#D
+l3 = []
+for x in l1: 
+    for y in l2:
+        if x == y:
+            l3.append(x)
+print("Valores em comum", l3)
+#E
+unir = set(l1 + l2)
+unidos = list(unir)
+print(unidos)
+
+#33
+#https://stackoverflow.com/questions/49973739/python-how-to-remove-zeroes-from-a-list-in-python
+l = []
+for i in range(0,15):
+    a = int(input("N: "))
+    l.append(a)
+
+X = [i for i in l if i != 0]
+print(X)
+
+#34
+l1 = []
+c1 = 0
+
+print("Lista \n")
+while True:
+    a = int(input("Valor da lista: "))
+    if a not in l1:
+        l1.append(a)
+        c1 +=1
+    else:
+        print("Não pode Valor repetido")
+
+    if c1 == 10:
+        False
+        break
+print(l1)
+
+#35
+# ESSA PORRA DE QUESTÃO É CONFUSA P KRL, NÃO FAZ SENTIDO
+# A PROXIMA POSIÇÃO SEMPRE VAI SER A ANTERIOR MAIS 1,
+# E ELE NÃO DA PARAMETRO DE INICIO
+# VAI A MERDA ESSA QUESTÃO
+
+#36 37 38
+# AS 3 SÃO SÓ DE ORDEM, ENTÃO FDC
+l = []
+for i in range(1,12):
+    a = int(input("N: "))
+    l.append(a)
+
+l = sorted(l)
+print("Ordem Crescente", l)
+print("Ordem Inversa", l[::-1])
+
+#39
+# https://www.delftstack.com/es/howto/python/python-pascal-triangle/#:~:text=Para%20formar%20un%20tri%C3%A1ngulo%20pascal%20en%20Python%2C%20hay,lista%20vac%C3%ADa%2C%20que%20se%20utiliza%20para%20almacenar%20valores.
+num = int(input("Enter the number of rows:"))
+for n in range(num):
+    print(''*(num-n), end='')
+
+    print(''.join(map(str, str(11**n))))
+#VAI SE FUDER ESSE DEVER
