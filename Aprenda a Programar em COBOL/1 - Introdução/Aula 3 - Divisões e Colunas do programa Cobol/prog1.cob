@@ -8,5 +8,7 @@
        PROGRAM-BEGIN. *>Intrução para Iniciar o Programa *>
            DISPLAY "Salve Mundo". *> Exibir a Mensagem*>
 
+      * Comentario, pra comentar coloca * na coluna 7
+
        PROGRAM-DONE. *>Intrução para Finalizar o Programa *>
            STOP RUN. *> Vai dar STOP no Programa *>
