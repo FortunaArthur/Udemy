@@ -1,0 +1,45 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROG27.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+      *      ADD   SUBTRACT    MULTIPLI    DIVIDE
+      *      TO    FROM        BY          INTO
+       WORKING-STORAGE SECTION.
+       01  VALOR1 PIC 9(2) VALUE 20.
+       01  VALOR2 PIC 9 VALUE 5.
+       01  VALOR3 PIC 99 VALUE 15.
+       01  RESULTADO PIC 99.
+
+       PROCEDURE DIVISION.
+       PROGRAM-BEGIN.
+           PERFORM VALORES.
+      *    VALOR1 = VALOR1 + VALOR2
+           ADD VALOR2 TO VALOR1.
+           DISPLAY "VALOR1 ADD VALOR2: ".
+
+           PERFORM VALORES.
+      *    VALOR1 = VALOR1 - VALOR3
+           SUBTRACT VALOR3 FROM VALOR1.
+           DISPLAY "VALOR3 SUBTRACT VALOR1: ".
+
+           PERFORM VALORES.
+      *    VALOR2 = VALOR2 * VALOR3
+           MULTIPLY VALOR2 BY VALOR3.
+           DISPLAY "VALO2 MULTIPLY VALOR3: ".
+
+           PERFORM VALORES.
+      *    VALOR3 = VALOR3 / VALOR2
+           DIVIDE VALOR2 INTO VALOR3.
+           DISPLAY "VALOR2 DIVIDE INTO VALOR3: ".
+
+           PERFORM VALORES.
+
+       PROGRAM-DONE.
+           STOP RUN.
+
+       VALORES.
+           DISPLAY "========".
+           DISPLAY "VALOR1: "VALOR1.
+           DISPLAY "VALOR2: "VALOR2.
+           DISPLAY "VALOR3: "VALOR3.
+           DISPLAY "".
