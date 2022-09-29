@@ -21,8 +21,7 @@
            IF VALOR1 = VALOR2
                DISPLAY "Valores Iguais"
                DISPLAY VALOR1 " Igual " VALOR2.
-               DISPLAY "Valores Iguais"
-               DISPLAY "Valores Iguais"
+
       *    O IF vai executar todas as instruções dentro dele até encerrar
 
            IF VALOR1 > VALOR2

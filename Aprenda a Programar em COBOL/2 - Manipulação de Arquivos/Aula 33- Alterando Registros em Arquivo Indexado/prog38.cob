@@ -1,0 +1,114 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROG38.
+      *    Alterando Registros
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+
+           COPY "SELFUNCIONARIO.cob".
+
+       DATA DIVISION.
+       FILE SECTION.
+
+           COPY "FDFUNCIONARIO.cob".
+
+       WORKING-STORAGE SECTION.
+
+       77  REGISTRO-ENCONTRADO PIC X. *> VAI SERVIR PRA QUANDO O REGISTRO FOR ENCONTRADO*>
+      *    Possui o Mesmo Tamanho do Codigo do Funcionario
+       77  CODIGO-FUNCIONARIO-PARA-ALTERAR PIC 9(5).*> VAI PEGAR O CODIGO DO USUARIO Q QUER ALTERAR*>
+      *    Esse é o Campo que Vai ser Alterado
+       77  CAMPO PIC 9.*> É O CAMPO QUE O USUARIO QUER ALTERAR*>
+
+       PROCEDURE DIVISION.
+       PROGRAM-BEGIN.
+      *    aKI É SÓ PRA CRIAR E FECHAR
+           OPEN I-O ARQUIVO-FUNCIONARIO.
+
+           PERFORM PEGA-REGISTRO.
+
+           PERFORM ALTERAR-REGISTRO UNTIL FUNCIONARIO-CODIGO = ZEROS.
+
+           CLOSE ARQUIVO-FUNCIONARIO.
+
+       PROGRAM-DONE.
+           STOP RUN.
+
+           PEGA-REGISTRO.
+      *    inicializando as variaveis
+           MOVE SPACE TO FUNCIONARIO-REGISTRO.
+           MOVE ZEROS TO FUNCIONARIO-CODIGO.
+
+      *    Perguntar qual registro tem q mudar
+           DISPLAY "INFORME O CODIGO DO FUNCIONARIO".
+           DISPLAY "PARA ALTERAR (1-9999)".
+           DISPLAY "DIGITE 0 (ZERO) PARA CANCELAR".
+           ACCEPT CODIGO-FUNCIONARIO-PARA-ALTERAR.
+      *    Atribui o codigo fornecido ao registro
+           MOVE CODIGO-FUNCIONARIO-PARA-ALTERAR TO FUNCIONARIO-CODIGO.
+
+           MOVE "N" TO REGISTRO-ENCONTRADO. *> atribuir N a registro*>
+
+           PERFORM ENCONTRAR-REGISTRO-FUNCIONARIO UNTIL
+      *    Aki são as condiçoes do loop
+           REGISTRO-ENCONTRADO = "S" OR FUNCIONARIO-CODIGO = ZEROS.
+
+       ENCONTRAR-REGISTRO-FUNCIONARIO.
+           MOVE "S" TO REGISTRO-ENCONTRADO.
+      *    AKI ELE VAI LER REGISTRO POR REGISTRO
+           READ ARQUIVO-FUNCIONARIO RECORD
+      *    Se não encontrar o registro , atribui "N" a REGISTRO-ENCONTRADO
+           INVALID KEY MOVE "N" TO REGISTRO-ENCONTRADO.
+      *    IF PRA QUANDO O CODIGO NÃO FOR ENCONTRADO
+           IF REGISTRO-ENCONTRADO = "N"
+               DISPLAY "REGISTRO NÃO ENCONTRADO"
+               DISPLAY "INFORME O CODIGO DO FUNCIONARIO"
+               DISPLAY "PARA ALTERAR (1-9999)"
+               DISPLAY "DIGITE 0 (ZERO) PARA CANCELAR"
+               ACCEPT CODIGO-FUNCIONARIO-PARA-ALTERAR.
+
+           MOVE CODIGO-FUNCIONARIO-PARA-ALTERAR TO FUNCIONARIO-CODIGO.
+
+       ALTERAR-REGISTRO.
+      *    Exibir Todos os Campos do Registro.
+           DISPLAY "============================".
+           DISPLAY "CODIGO: " FUNCIONARIO-CODIGO.
+           DISPLAY "1.NOME: " FUNCIONARIO-NOME.
+           DISPLAY "2.ENDERECO: " FUNCIONARIO-ENDERECO.
+           DISPLAY "3.TELEFONE: " FUNCIONARIO-TELEFONE.
+           DISPLAY "4.EMAIL: " FUNCIONARIO-EMAIL.
+           DISPLAY "============================".
+      *    o Usuario deve escolher 1 campo pra ALTERAR-REGISTRO
+           DISPLAY "DIGITE O NUMERO DO CAMPO QUE DESEJA ALTEAR (1-4):".
+           DISPLAY "OU DIGITE 0(ZERO) PARA SAIR".
+           ACCEPT CAMPO.
+           IF CAMPO > 4
+               DISPLAY "CAMPO INVALIDO".
+
+           PERFORM MUDAR-GRAVAR-CAMPO.
+
+           PERFORM PEGA-REGISTRO.
+
+       MUDAR-GRAVAR-CAMPO.
+           IF CAMPO = 1
+               DISPLAY "INFORME O NOME: "
+               ACCEPT FUNCIONARIO-NOME.
+
+           IF CAMPO = 2
+               DISPLAY "INFORME O ENDERECO: "
+               ACCEPT FUNCIONARIO-ENDERECO.
+
+           IF CAMPO = 3
+               DISPLAY "INFORME O TELEFONE: "
+               ACCEPT FUNCIONARIO-TELEFONE.
+
+           IF CAMPO = 4
+               DISPLAY "INFORME O EMAIL: "
+               ACCEPT FUNCIONARIO-EMAIL.
+
+           PERFORM REESCREVER-REGISTRO.
+
+       REESCREVER-REGISTRO.
+            REWRITE FUNCIONARIO-REGISTRO INVALID KEY
+            DISPLAY "ERRO AO  REESCREVER O REGISTRO".
