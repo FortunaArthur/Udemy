@@ -4,7 +4,7 @@ from tkinter import messagebox
 from tkinter import ttk
 
 #AGR VAI INTEGRAR COMO BACK END
-from ..Backend import teste
+import DataBaser
 
 #Grande Steck over Flow, salvo nois
 # https://stackoverflow.com/questions/51591456/can-i-use-rgb-in-tkinter
