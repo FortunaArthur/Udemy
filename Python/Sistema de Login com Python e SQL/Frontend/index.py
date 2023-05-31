@@ -3,6 +3,9 @@ from tkinter import * # TEM Q SER ASSIM E PQ SIM
 from tkinter import messagebox
 from tkinter import ttk
 
+#AGR VAI INTEGRAR COMO BACK END
+from ..Backend import teste
+
 #Grande Steck over Flow, salvo nois
 # https://stackoverflow.com/questions/51591456/can-i-use-rgb-in-tkinter
 def RGBZINHO(rgb):
@@ -19,7 +22,7 @@ janela.title("DP Systems - Painel de Acesso")
 janela.geometry("600x300")
 
 # Colocando o ICONE
-janela.iconbitmap(default="Udemy/Python/Sistema de Login com Python e SQL/imgs/LogoIcon.ico") 
+janela.iconbitmap(default="C:/Users/arthu/OneDrive/Documentos/GitHub/Udemy/Python/Sistema de Login com Python e SQL/imgs/LogoIcon.ico") 
 
 # E NUM É Q ESSE RGB FUNCIONO MSM, VLW AI overFlows
 # site das cores pra se DIiivertir https://www.rapidtables.org/pt/web/color/RGB_Color.html
@@ -40,7 +43,7 @@ Frame_Direito = Frame(janela, width=390, height=300, bg=RGBZINHO((135, 135, 0)),
 Frame_Direito.pack(side=RIGHT)
 
 # ============== IMPORTAR A LOGO
-logo = PhotoImage(file="Udemy/Python/Sistema de Login com Python e SQL/imgs/logo.png")
+logo = PhotoImage(file="C:/Users/arthu/OneDrive/Documentos/GitHub/Udemy/Python/Sistema de Login com Python e SQL/imgs/Logo.png")
 Rotulo_da_Logo = Label(Frame_Esquerdo, image=logo, bg=RGBZINHO((255,128,0)))
 Rotulo_da_Logo.place(x=50, y=100)
 
