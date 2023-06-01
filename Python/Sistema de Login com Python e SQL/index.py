@@ -67,7 +67,25 @@ Entrada_Senha = ttk.Entry(Frame_Direito, width=40, show="■") #USEI esse site a
 Entrada_Senha.place(x=110, y=170)
 
 # ============== AGORA É OS BUTÃO (AKI VAMO CRIA OS BUTÃO), TO MO FELIZ OUVINDO ROCK JAPONES
-Butao_Login = ttk.Button(Frame_Direito, text="Login", width=35)
+# AGORA CRIAR O COMANDO DE LOGAR
+
+def Logar():
+    Usuario = Entrada_Usuario.get()
+    Senha = Entrada_Senha.get()
+
+    DataBaser.cursor.execute("""
+    SELECT * FROM tb_Usuarios WHERE (Usuario = ? AND Senha =?)
+    """,(Usuario, Senha))
+    print("PASSSOU PORRA")
+    Verificar = DataBaser.cursor.fetchone()
+    # FAZER VERIFICAÇÃO
+    try:
+        if Usuario in Verificar and Senha in Verificar:
+            messagebox.showinfo(title="Informação de Login", message="Login Confirmado. Bem-Vindo!")
+    except:
+        messagebox.showinfo(title="Informação de Login", message="Acesso Negado. Verifique seu Cadastro no Sistema")
+
+Butao_Login = ttk.Button(Frame_Direito, text="Login", width=35, command=Logar)
 Butao_Login.place(x=110, y=220)
 
 #CRIANDO A FUNÇÃO DE CADASTRO E ASSEMELHANDO ELA NA VARIAVEL DE CADASTRO
@@ -97,14 +115,18 @@ def Cadastro():
         Usuario = Entrada_Usuario.get()
         Senha = Entrada_Senha.get()
 
-        #INSERIR OS VALORES NA TABELA, E MELMEBROU MUITO O FORMAT DO PYTHON
-        DataBaser.cursor.execute("""
-        INSERT INTO tb_Usuarios(Nome, Email, Usuario, Senha) VALUES (?, ?, ?, ?)
-        """,(Nome, Email, Usuario, Senha))
-        DataBaser.conectar.commit()
+        #CRIAR A CONDIÇÃO DOCAMPO
+        if Nome == "" and Email == "" and Usuario == "" and Senha == "":
+            messagebox.showerror(title="Erro de Cadastro", message="Preencha Todos os Campos")
+        else:
+            #INSERIR OS VALORES NA TABELA, E MELMEBROU MUITO O FORMAT DO PYTHON
+            DataBaser.cursor.execute("""
+            INSERT INTO tb_Usuarios(Nome, Email, Usuario, Senha) VALUES (?, ?, ?, ?)
+            """,(Nome, Email, Usuario, Senha))
+            DataBaser.conectar.commit()
 
-        #AGORA Q ENTRA A CAIXA DE MENSAGEM
-        messagebox.showinfo(title="Infomação de Cadastro", message="Usuário Cadastrado com Sucesso!")
+            #AGORA Q ENTRA A CAIXA DE MENSAGEM
+            messagebox.showinfo(title="Infomação de Cadastro", message="Usuário Cadastrado com Sucesso!")
 
 
     Cadastrar = ttk.Button(Frame_Direito, text="Cadastrar", width=35, command=CadastrarnoBanco)
