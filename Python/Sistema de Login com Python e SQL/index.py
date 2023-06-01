@@ -89,7 +89,25 @@ def Cadastro():
     Entrada_Email.place(x=110, y=81)
 
     # TERCEIRAMENTO, FAZER OS BUTÃO DE REGISTRO E DE VOLTA
-    Cadastrar = ttk.Button(Frame_Direito, text="Cadastrar", width=35)
+    # AGR EU VOI ADCICIONAR OS COMANDOS PRA CADASTRAR
+
+    def CadastrarnoBanco():
+        Nome = Entrada_Nome.get()
+        Email = Entrada_Email.get()
+        Usuario = Entrada_Usuario.get()
+        Senha = Entrada_Senha.get()
+
+        #INSERIR OS VALORES NA TABELA, E MELMEBROU MUITO O FORMAT DO PYTHON
+        DataBaser.cursor.execute("""
+        INSERT INTO tb_Usuarios(Nome, Email, Usuario, Senha) VALUES (?, ?, ?, ?)
+        """,(Nome, Email, Usuario, Senha))
+        DataBaser.conectar.commit()
+
+        #AGORA Q ENTRA A CAIXA DE MENSAGEM
+        messagebox.showinfo(title="Infomação de Cadastro", message="Usuário Cadastrado com Sucesso!")
+
+
+    Cadastrar = ttk.Button(Frame_Direito, text="Cadastrar", width=35, command=CadastrarnoBanco)
     Cadastrar.place(x=110, y=220)
 
     #SOOOOOO Q PRA VOLTAR PRO MEUNU, TEN FUNÇÃOZINHA MEU BOM

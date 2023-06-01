@@ -6,7 +6,7 @@ cursor = conectar.cursor()
 
 # Criar a tabela
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS Usuarios (
+CREATE TABLE IF NOT EXISTS tb_Usuarios (
     Id_Usuario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     Nome TEXT NOT NULL,
     Email TEXT NOT NULL,
