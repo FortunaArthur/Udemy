@@ -1,17 +1,3 @@
-def Pular_Linha():
-    pular_linha = "\n"*2
-    print(pular_linha)
-
-#1
-n = int(input("numero inteiro: "))
-print(n, type(n))
-Pular_Linha()
-
-#2
-n = float(input("numero real(float): "))
-print(n, type(n))
-Pular_Linha()
-
 #3
 print("Digita ai 3 numero inteiro :")
 n1 = int(input('N1: '))
