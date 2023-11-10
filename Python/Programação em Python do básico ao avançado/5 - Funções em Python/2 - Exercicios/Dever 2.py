@@ -13,16 +13,18 @@ def data_por_extenso(data):
         9: 'Setembro',
         10: 'Outubro',
         11: 'Novembro',
-        12: 'Dezembro'
-    }
+        12: 'Dezembro'}
 
     # Separa a data em dia, mês e ano
     dia, mes, ano = map(int, data.split('/'))
 
-    # Formata a data por extenso
-    data_extenso = f"{dia} de {meses[mes]} de {ano}"
-
-    return data_extenso
+    if mes in meses:
+        # Formata a data por extenso
+        data_extenso = f"{dia} de {meses[mes]} de {ano}"
+        return data_extenso
+    else:
+        print("não tem esse mês")
+        return "data errada"
 
 # Testa a função
 print(data_por_extenso(input("Data: ")))
