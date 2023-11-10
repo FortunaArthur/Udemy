@@ -1,4 +1,4 @@
-#1 
+#1
 v = []
 #A)
 v.append(1)
@@ -34,7 +34,7 @@ print(c)
 
 #4
 l = [1, 2, 3, 4, 5, 6, 7, 8]
-print("Posição 2 ==" , l[2], "\n"  + 
+print("Posição 2 ==" , l[2], "\n"  +
 "Posição 6 ==", l[6], "\n" +
 "Soma ==", l[2] + l[6])
 
@@ -189,13 +189,13 @@ while True:
     elif escolha == 1:
         print(l1,"\n")
         print(l2)
-        False 
+        False
         break
 
     elif escolha == 2:
         print(l1[::-1],"\n")
         print(l2[::-1])
-        False 
+        False
         break
 
     else:
@@ -211,7 +211,7 @@ for i in range(1,6):
 print(l,"\n")
 
 ind = [] # 1° descobrir os negativos
-for i in l:    
+for i in l:
     if i < 0:
         ind.append(i)
 
@@ -303,11 +303,11 @@ for i in range(1,11):
     A.append(a)
     B.append(b)
 
-indA = [] 
+indA = []
 for i in A:
     indA.append(A.index(i))
 
-indB = [] 
+indB = []
 for i in B:
     indB.append(B.index(i))
 
@@ -346,7 +346,7 @@ for y in B:
 
     elif y % 2 != 0:
         impares.append(y)
-    
+
 print("Lista de Pares", pares)
 print("Lista de Impares",impares)
 
@@ -366,7 +366,7 @@ for x in A:
     for y in B:
         p = x * y
     produto_escalar.append(p)
-    
+
 print("Produto Escalar =",sum(produto_escalar))
 
 #24
@@ -380,7 +380,7 @@ while True:
 
     if alunos.get(id):
         print("Ja existe o ID ", id)
-        
+
     else:
         h = float(input("H do Aluno: "))
         alunos[id] = h
@@ -445,7 +445,7 @@ for num in l:
         else:
             #print(num, "is a prime number")
             primos.append(num)
-    
+
     else:
         #print(num, "is not a prime number")
         N_primos.append(num)
@@ -473,7 +473,7 @@ for x in l:
 
     elif x % 2 != 0:
         v1.append(x)
-    
+
 print("Lista de Pares", v2)
 print("Lista de Impares", v1)
 
@@ -532,8 +532,8 @@ while True:
     if c2 == 10:
         False
         break
-    
-for x in l1: 
+
+for x in l1:
     for y in l2:
         if x == y:
             l3.append(x)
@@ -574,7 +574,7 @@ while True:
     if c2 == 10:
         False
         break
-    
+
 l3 = set(l1 + l2)
 
 print("1° Lista:", l1)
@@ -594,7 +594,7 @@ while True:
     if a not in l1:
         l1.append(a)
         c1 +=1
-        
+
     else:
         print("Não pode Valor repetido")
 
@@ -631,7 +631,7 @@ difenc = [ (a - b) for a, b in zip(l1, l2) ]
 print("Diferença", difenc)
 #D
 l3 = []
-for x in l1: 
+for x in l1:
     for y in l2:
         if x == y:
             l3.append(x)
@@ -668,29 +668,3 @@ while True:
         False
         break
 print(l1)
-
-#35
-# ESSA PORRA DE QUESTÃO É CONFUSA P KRL, NÃO FAZ SENTIDO
-# A PROXIMA POSIÇÃO SEMPRE VAI SER A ANTERIOR MAIS 1,
-# E ELE NÃO DA PARAMETRO DE INICIO
-# VAI A MERDA ESSA QUESTÃO
-
-#36 37 38
-# AS 3 SÃO SÓ DE ORDEM, ENTÃO FDC
-l = []
-for i in range(1,12):
-    a = int(input("N: "))
-    l.append(a)
-
-l = sorted(l)
-print("Ordem Crescente", l)
-print("Ordem Inversa", l[::-1])
-
-#39
-# https://www.delftstack.com/es/howto/python/python-pascal-triangle/#:~:text=Para%20formar%20un%20tri%C3%A1ngulo%20pascal%20en%20Python%2C%20hay,lista%20vac%C3%ADa%2C%20que%20se%20utiliza%20para%20almacenar%20valores.
-num = int(input("Enter the number of rows:"))
-for n in range(num):
-    print(''*(num-n), end='')
-
-    print(''.join(map(str, str(11**n))))
-#VAI SE FUDER ESSE DEVER
