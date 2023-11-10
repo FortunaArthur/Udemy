@@ -13,18 +13,47 @@ def data_por_extenso(data):
         9: 'Setembro',
         10: 'Outubro',
         11: 'Novembro',
-        12: 'Dezembro'}
+        12: 'Dezembro'
+        }
 
-    # Separa a data em dia, mês e ano
-    dia, mes, ano = map(int, data.split('/'))
+    dias = {
+    'Janeiro': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+    'Fevereiro': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],
+    'Março': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+    'Abril': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+    'Maio': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+    'Junho': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+    'Julho': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+    'Agosto': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+    'Setembro': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+    'Outubro': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+    'Novembro': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+    'Dezembro': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+    }
 
-    if mes in meses:
-        # Formata a data por extenso
-        data_extenso = f"{dia} de {meses[mes]} de {ano}"
-        return data_extenso
-    else:
-        print("não tem esse mês")
-        return "data errada"
+    lista = data.split('/')
 
-# Testa a função
-print(data_por_extenso(input("Data: ")))
+    dia,mes,ano = lista[0],lista[1],lista[2]
+
+    try:
+        dia = int(dia)
+        mes = int(mes)
+        ano = int(ano)
+
+        if mes in meses:
+            if meses[mes] in dias:
+                lista_dias = dias[meses[mes]]
+
+                if dia in lista_dias:
+                    print(f"{dia} de {meses[mes]} de {ano}")
+
+                else:
+                    print("Data Invalida")
+        else:
+            print("Data Invalida")
+
+    except ValueError:
+        print("Todos os números devem ser inteiros.")
+        return
+
+data_por_extenso(input("data: "))
