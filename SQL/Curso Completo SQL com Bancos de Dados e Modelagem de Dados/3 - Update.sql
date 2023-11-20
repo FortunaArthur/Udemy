@@ -2,7 +2,7 @@
 update departamento set orcamento = 500;
 
 # alterar de maneira selecionada
-update departamento set orcamento = 500 where nome_departamento like "comercial";
+update departamento set orcamento = 500 where nome_departamento like "Comercial";
 # da pra colocar % na palavra q vc busca no like mais aki n vai fazer diferença
 
 select * from departamento;
